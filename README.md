@@ -1,4 +1,5 @@
-
+## See the client application here:
+https://github.com/Crookinator/guide-dog-log-client 
 ## API
 ### Authentication
 
