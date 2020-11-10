@@ -6,6 +6,12 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+	photo: {
+		type: String
+	},
+	dogName: {
+		type: String
+	},
   hashedPassword: {
     type: String,
     required: true
