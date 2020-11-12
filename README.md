@@ -123,6 +123,94 @@ Response:
 HTTP/1.1 204 No Content
 ```
 
+### Post
+POST  /posts 
+PATCH   /posts/:id
+GET   /posts
+GET   /posts/:id
+DELETE  /posts/:id
+
+### Curl Scripts 
+``` index.sh
+#!/bin/sh
+
+API="http://localhost:4741"
+URL_PATH="/posts"
+
+curl "${API}${URL_PATH}" \
+  --include \
+  --request GET \
+  --header "Authorization: Bearer ${TOKEN}"
+
+echo
+`
+``` show.sh
+#!/bin/sh
+
+API="http://localhost:4741"
+URL_PATH="/posts"
+
+curl "${API}${URL_PATH}/${ID}" \
+  --include \
+  --request GET \
+  --header "Authorization: Bearer ${TOKEN}"
+
+echo
+
+`
+```md create.md
+#!/bin/bash
+
+API="http://localhost:4741"
+URL_PATH="/posts"
+
+curl "${API}${URL_PATH}" \
+  --include \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer ${TOKEN}" \
+  --data '{
+    "post": {
+      "text": "'"${TEXT}"'",
+      "guideDogName": "'"${DGNAME}"'",
+      "yearsOfService": "'"${SERVICEYEARS}"'",
+      "breed": "'"${BREED}"'",
+      "title": "'"${TITLE}"'"
+    }
+  }'
+
+echo
+
+`
+```md update.sh
+#!/bin/bash
+
+API="http://localhost:4741"
+URL_PATH="/posts"
+
+curl "${API}${URL_PATH}/${ID}" \
+  --include \
+  --request PATCH \
+  --header "Content-Type: application/json" \
+--header "Authorization: Bearer ${TOKEN}" \
+--data '{
+    "post": {
+      "title": "'"${TITLE}"'",
+      "text": "'"${TEXT}"'",
+      "guideDogName": "'"${DGNAME}"'",
+      "yearsOfService": "'"${SERVICEYEARS}"'",
+      "breed": "'"${BREED}"'"
+    }
+  }'
+
+echo
+
+`
+```md destroy.sh
+
+`
+
+
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
