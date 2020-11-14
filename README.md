@@ -1,5 +1,30 @@
-## See the client application here:
+# Related Links
+
+## Client Repo
 https://github.com/Crookinator/guide-dog-log-client 
+## Deployed Links
+Client:
+https://crookinator.github.io/guide-dog-log-client/ 
+API:
+https://mighty-hamlet-83462.herokuapp.com
+
+# List of Technologies 
+	- Express
+	- Mongoose
+	- mongoDB
+	- JavaScript
+	- TextMate (editor)
+
+# Planning & Problem Solving
+I thought out what I would want to do on the client side application then determined what would be needed as far as resources on the API side. I planned out the Posts resource as a CRUD resource. I tackled the schema first and then worked on the endpoints for the api. By starting at the schema I was able to trace any issues easily by following the current chain I was working on back to the schema. Often times I'd find the error or issue quckly with this method. 
+
+# Future Plans
+In the APIs current state there is only one additional resource to the authentication resource with the one relationship of user to posts. In future versions I'd like to finish building out the user resource to include more "keys" on the schema to fully build out a "profile" as well as adding relationships for comments on posts.
+
+## ERD description
+User -|--< Post
+This is a relationship that shows a single User can have many Posts. This is how I've set up the API resource of posts.  
+
 ## API
 ### Authentication
 
